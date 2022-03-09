@@ -15,7 +15,7 @@ function App() {
       .then(setBooks)
   }, [])
 
-  
+
 
 
   return (
@@ -23,7 +23,7 @@ function App() {
       Hello from app
       <NavBar />
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/" element={<Home books={books}/>} />
         <Route exact path="/books" element={<AllBooksPage />} />
         <Route path="/mybooks" element={<MyBooksPage />} />
       </Routes>
