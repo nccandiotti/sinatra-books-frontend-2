@@ -13,7 +13,7 @@ function MyBookCard({ book }) {
 
   const updateAvailability = () => {
     toggleAvailable()
-    fetch(`http://localhost:9292/mybooks`, {
+    fetch(`http://localhost:9292/mybooks/${book.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -29,7 +29,12 @@ function MyBookCard({ book }) {
   return (
     <>
       <h4>{book.book.title}</h4>
-      <img src={book.book.image} alt={book.book.title} />
+      <img
+        width="200px"
+        height="200px"
+        src={book.book.image}
+        alt={book.book.title}
+      />
       <p>{book.book.description}</p>
       {/* {book.book.availability ? "Available in MarketPlace" : "Not Available"} */}
       {isAvailable ? (

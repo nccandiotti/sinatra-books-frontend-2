@@ -1,19 +1,20 @@
 import React from "react"
-import MarketPlaceCards from "react"
+import MarketPlaceCards from "./MarketPlaceCards"
 
 function MarketPlace({ availableBooks }) {
-  createMarketPlaceCards = availableBooks.map((book) => (
+  console.log(availableBooks)
+  const createMarketPlaceCards = availableBooks.map((book) => (
     <MarketPlaceCards
       key={book.id}
       available={book.available}
-      book={book.book}
+      book={book}
       description={book.description}
     />
   ))
   return (
     <>
       <h1>Market Place</h1>
-      {CreateMarketPlaceCards}
+      {createMarketPlaceCards}
     </>
   )
 }

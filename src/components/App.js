@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import NavBar from "./NavBar"
 import Home from "./Home"
 import MyBooksPage from "./MyBooksPage"
-import MarketPlace from "./MyBooksPage"
+import MarketPlace from "./MarketPlace"
 
 function App() {
   const [books, setBooks] = useState([])

@@ -21,13 +21,13 @@ function BookCard({
       body: JSON.stringify(params),
     })
       .then((r) => r.json())
-      .then((itemData) => orderBook(itemData))
+      .then(setMyBooks)
   }
 
   return (
-    <li>
+    <li className="cards-list">
       <h4>{title}</h4>
-      <img src={image} alt={title} />
+      <img width="200px" height="200px" src={image} alt={title} />
       <p>{description}</p>
       <button onClick={handleClick}>Order</button>
     </li>
