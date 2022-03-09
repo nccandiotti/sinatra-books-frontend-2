@@ -1,7 +1,7 @@
 import React from "react"
 
 function MyBooksPage() {
-  return <div>MyBooksPage</div>
+  return <div>Hello from My Books Page</div>
 }
 
 export default MyBooksPage
