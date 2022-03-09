@@ -1,4 +1,5 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+import AllBooksContainer from "./AllBooksContainer"
 
 function AllBooksPage() {
   useEffect(() => {
@@ -7,7 +8,14 @@ function AllBooksPage() {
       .then((r) => console.log(r))
   }, [])
 
-  return <div>AllBooksPage</div>
+  //   const [allBooksArray, setAllBooks] = useState([])
+  //   console.log(allBooksArray)
+
+  return (
+    <div>
+      <AllBooksContainer books />
+    </div>
+  )
 }
 
 export default AllBooksPage
