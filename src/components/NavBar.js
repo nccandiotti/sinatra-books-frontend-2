@@ -5,7 +5,7 @@ function NavBar() {
   return (
     <header>
       <NavLink to="/">Home</NavLink>
-      <NavLink to="/books">See all available books</NavLink>
+      <NavLink to="/marketplace">Shop Marketplace</NavLink>
       <NavLink to="/mybooks">My books</NavLink>
     </header>
   )

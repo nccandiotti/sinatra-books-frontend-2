@@ -1,23 +1,21 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+import MyBooksContainer from "./MyBooksContainer"
 
 // need to figure out how to interpolate id based on current user
 // const id =
 
-function MyBooksPage() {
-  
-  
-  useEffect(() => {
-   // fetch(`http://localhost:9292/mybooks/${id}`)
-   fetch(`http://localhost:9292/mybooks`)
-      .then((res) => res.json())
-      .then((r) => console.log(r))
-  }, [])
-  return <div>Hello from My Books Page</div>
+function MyBooksPage({ myBooks }) {
+  // my books => available, rating, user_id, book (nested title, desc, etc.)
+  // console.log(myBooks)
+
+  return (
+    <div>
+      <MyBooksContainer myBooks={myBooks} />
+    </div>
+  )
 }
 
 export default MyBooksPage
-
-
 
 // localStorage.setItem("user_id", user_from_login_form.id)
 //let id = localStorage.getItem("user_id")
