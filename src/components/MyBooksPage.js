@@ -4,8 +4,11 @@ import { useEffect } from "react"
 // const id =
 
 function MyBooksPage() {
+  
+  
   useEffect(() => {
-    fetch(`http://localhost:9292/mybooks/23`)
+   // fetch(`http://localhost:9292/mybooks/${id}`)
+   fetch(`http://localhost:9292/mybooks`)
       .then((res) => res.json())
       .then((r) => console.log(r))
   }, [])
@@ -13,3 +16,8 @@ function MyBooksPage() {
 }
 
 export default MyBooksPage
+
+
+
+// localStorage.setItem("user_id", user_from_login_form.id)
+//let id = localStorage.getItem("user_id")
