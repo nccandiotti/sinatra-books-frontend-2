@@ -1,15 +1,20 @@
 import "../App.css"
-import { Route, BrowserRouter } from "react-router-dom"
-import { useEffect, useState } from "react"
+import { Route, Routes } from "react-router-dom"
+import NavBar from "./NavBar"
+import MyBooksPage from "./MyBooksPage"
+import AllBooksPage from "./MyBooksPage"
 
 function App() {
-  useEffect(() => {
-    fetch("http://localhost:6001/books")
-      .then((response) => response.json())
-      .then((response) => console.log(response))
-  }, [])
-
-  return <div>Hello from app</div>
+  return (
+    <div>
+      Hello from app
+      <NavBar />
+      <Routes>
+        <Route exact path="/" component={AllBooksPage} />
+        <Route path="/mybooks" component={MyBooksPage} />
+      </Routes>
+    </div>
+  )
 }
 
 export default App
