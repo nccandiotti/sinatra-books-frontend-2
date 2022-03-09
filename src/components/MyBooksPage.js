@@ -5,7 +5,7 @@ import { useEffect } from "react"
 
 function MyBooksPage() {
   useEffect(() => {
-    fetch(`http://localhost:9292/mybooks/42`)
+    fetch(`http://localhost:9292/mybooks/23`)
       .then((res) => res.json())
       .then((r) => console.log(r))
   }, [])

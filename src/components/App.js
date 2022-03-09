@@ -1,17 +1,23 @@
 import "../App.css"
 import { Route, Routes } from "react-router-dom"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import NavBar from "./NavBar"
 import Home from "./Home"
 import MyBooksPage from "./MyBooksPage"
 import AllBooksPage from "./MyBooksPage"
 
 function App() {
+  const [books, setBooks] = useState([])
+
   useEffect(() => {
     fetch("http://localhost:9292/books")
       .then((r) => r.json())
-      .then((r) => console.log(r))
+      .then(setBooks)
   }, [])
+
+  
+
+
   return (
     <div>
       Hello from app

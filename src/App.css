@@ -1,3 +1,10 @@
+* {
+  margin: auto;
+  padding: 0;
+  font-family: 'Cinzel', serif;
+  text-align: center;
+}
+
 .App {
   text-align: center;
 }
@@ -14,7 +21,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #7c869b;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
