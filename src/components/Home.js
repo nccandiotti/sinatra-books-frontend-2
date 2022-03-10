@@ -24,11 +24,17 @@ function Home({
         setMyBooks={setMyBooks}
         handleAvailabilityUpdate={handleAvailabilityUpdate}
         currentUser={currentUser}
+        onAddClick={handleAddBooks}
       />
     ))
+
+    function handleAddBooks(){
+      setIndex(index => (index + 1) % books.length)
+    }
+  
   return (
     <>
-      <h1>Shop All Books</h1>
+      <h2>Shop All Books</h2>
       <ul>{bookCards}</ul>
     </>
   )

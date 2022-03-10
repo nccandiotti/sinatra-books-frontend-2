@@ -16,7 +16,7 @@ function MarketPlaceCards({ currentUser, book }) {
     <>
       {book.available ? (
         <div>
-          <h1>{book.book.title}</h1>
+          <h2>{book.book.title}</h2>
           <img
             width="200px"
             height="200px"

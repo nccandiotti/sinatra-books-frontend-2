@@ -69,10 +69,10 @@ function App() {
   }
   return (
     <div>
-      <NavBar />
-      <h3>
+       <h5>
         <em>Welcome back, {currentUser.name}!</em>
-      </h3>
+      </h5>
+      <NavBar />
       <Routes>
         <Route
           exact

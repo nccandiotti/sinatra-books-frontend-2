@@ -1,10 +1,11 @@
 import React from "react"
 
-function BookCard({ orderBook, id, title, description, image, currentUser }) {
+function BookCard({ onAddClick, orderBook, id, title, description, image, currentUser }) {
   // onclick has to update the myBooks array w/orderbooks fx
   // onclick creates a new book instance of user_book for a given user - need
 
   function handleClick() {
+    console.log(title)
     const params = {
       book: { id: id, title: title, description: description, image: image },
     }
@@ -17,8 +18,13 @@ function BookCard({ orderBook, id, title, description, image, currentUser }) {
 
   return (
     <li className="cards-list ">
+      <img 
+        width="200px" 
+        height="200px" 
+        src={image} alt={title} 
+        onClick={onAddClick}
+        />
       <h4>{title}</h4>
-      <img width="200px" height="200px" src={image} alt={title} />
       <p>{description}</p>
       <button onClick={handleClick}>Order</button>
     </li>
