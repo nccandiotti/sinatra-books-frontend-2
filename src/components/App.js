@@ -32,6 +32,18 @@ function App() {
       .then(setMyBooks)
   }, [])
   const [myBooks, setMyBooks] = useState([])
+  console.log(myBooks)
+
+  function handleAvailabilityUpdate(bookId) {
+    const array = myBooks.map((book) => {
+      if (book.book.id === bookId) {
+        return { ...book, available: !book.available }
+      } else {
+        return book
+      }
+    })
+    setMyBooks(array)
+  }
 
   //all available books - market place
   const [availableBooks, setAvailableBooks] = useState([])
@@ -42,10 +54,15 @@ function App() {
   }, [])
   // console.log(availableBooks)
 
+  // order book from store
   function orderBook(book) {
     setMyBooks([...myBooks, book])
   }
 
+  // make mybook available to marketplace (in mybookcard component)
+  function addBookToMarketplace(book) {}
+
+  // claim book from marketplace
   function claimBookFromMarketPlace(bookObj) {
     const updatedArray = availableBooks.map((book) => (book = !bookObj.id))
     setAvailableBooks(updatedArray)
@@ -60,6 +77,7 @@ function App() {
           path="/"
           element={
             <Home
+              handleAvailabilityUpdate={handleAvailabilityUpdate}
               books={books}
               orderBook={orderBook}
               myBooks={myBooks}
@@ -78,7 +96,15 @@ function App() {
             />
           }
         />
-        <Route path="/mybooks" element={<MyBooksPage myBooks={myBooks} />} />
+        <Route
+          path="/mybooks"
+          element={
+            <MyBooksPage
+              myBooks={myBooks}
+              handleAvailabilityUpdate={handleAvailabilityUpdate}
+            />
+          }
+        />
       </Routes>
     </div>
   )

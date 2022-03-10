@@ -1,15 +1,13 @@
 import React from "react"
 
 function BookCard({ orderBook, id, title, description, image }) {
-  // onclick has to update the myBooks array
-  // onclick creates a new book instance of user_book for a given user
+  // onclick has to update the myBooks array w/orderbooks fx
+  // onclick creates a new book instance of user_book for a given user - need
 
   function handleClick() {
     const params = {
-      book_id: id,
-      book: { title: title, description: description, image: image },
+      book: { id: id, title: title, description: description, image: image },
     }
-    console.log(params)
     fetch("http://localhost:9292/mybooks", {
       method: "POST",
       headers: { "Content-Type": "application/json" },

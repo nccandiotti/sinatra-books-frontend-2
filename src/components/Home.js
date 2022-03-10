@@ -1,7 +1,14 @@
 import React from "react"
 import BookCard from "./BookCard"
 
-function Home({ books, orderBook, myBooks, setMyBooks }) {
+function Home({
+  books,
+  orderBook,
+  myBooks,
+  setMyBooks,
+  handleAvailabilityUpdate,
+}) {
+  console.log(myBooks)
   const bookCards = books.map((book) => (
     <BookCard
       key={book.id}
@@ -12,6 +19,7 @@ function Home({ books, orderBook, myBooks, setMyBooks }) {
       orderBook={orderBook}
       myBooks={myBooks}
       setMyBooks={setMyBooks}
+      handleAvailabilityUpdate={handleAvailabilityUpdate}
     />
   ))
   return <ul>{bookCards}</ul>

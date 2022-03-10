@@ -1,30 +1,30 @@
 import { useState, useEffect } from "react"
 
-function MyBookCard({ user_id, book, id }) {
-  console.log(user_id)
+function MyBookCard({ handleAvailabilityUpdate, user_id, book, id }) {
   // OnClick need to patch availability
 
   //   from Controller :
   // patch '/users/:id/sell_book' do
   // UserBook.find(params[:id]).update(available: true).to_json
   // end
-  const [isAvailable, setIsAvailable] = useState(false)
+  // const [isAvailable, setIsAvailable] = useState(false)
+  console.log(book.available)
 
-  const toggleAvailable = () => setIsAvailable(!isAvailable)
+  // function toggleAvailable() {
+  //   setIsAvailable((prevState) => !prevState)
+  // }
 
   const updateAvailability = () => {
-    toggleAvailable()
+    handleAvailabilityUpdate(book.book.id)
     fetch(`http://localhost:9292/mybooks/${user_id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        available: isAvailable,
+        available: !book.available,
       }),
-    })
-      .then((res) => res.json())
-      .then((result) => console.log(result))
+    }).then((res) => res.json())
   }
   // console.log(book)
   return (
@@ -38,10 +38,10 @@ function MyBookCard({ user_id, book, id }) {
       />
       <p>{book.book.description}</p>
       {/* {book.book.availability ? "Available in MarketPlace" : "Not Available"} */}
-      {isAvailable ? (
-        <button onClick={updateAvailability}>Add to MarketPlace</button>
+      {book.available ? (
+        <button onClick={updateAvailability}>Add from MarketPlace</button>
       ) : (
-        <button onClick={updateAvailability}>Remove from MarketPlace</button>
+        <button onClick={updateAvailability}>Remove to MarketPlace</button>
       )}
     </>
   )
