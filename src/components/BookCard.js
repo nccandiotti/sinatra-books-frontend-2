@@ -9,7 +9,7 @@ function BookCard({ orderBook, id, title, description, image, currentUser }) {
       book: { id: id, title: title, description: description, image: image },
     }
     fetch("http://localhost:9292/mybooks", {
-      method: "POST",
+      method: "patch",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(params),
     }).then((r) => r.json())

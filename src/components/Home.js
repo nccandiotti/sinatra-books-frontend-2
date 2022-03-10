@@ -9,7 +9,6 @@ function Home({
   handleAvailabilityUpdate,
   currentUser,
 }) {
-  console.log(myBooks)
   const bookCards = books.map((book) => (
     <BookCard
       key={book.id}

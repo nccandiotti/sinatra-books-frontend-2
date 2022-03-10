@@ -15,6 +15,8 @@ function App() {
       .then(setCurrentUser)
   }, [])
 
+  console.log(currentUser)
+
   //homepage - all books
 
   const [books, setBooks] = useState([])
