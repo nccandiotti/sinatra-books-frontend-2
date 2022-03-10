@@ -7,9 +7,17 @@ import MyBooksPage from "./MyBooksPage"
 import MarketPlace from "./MarketPlace"
 
 function App() {
-  const [books, setBooks] = useState([])
+  // current user (hardcoded as second in backend)
+  const [currentUser, setCurrentUser] = useState({})
+  useEffect(() => {
+    fetch("http://localhost:9292/currentuser")
+      .then((r) => r.json())
+      .then(setCurrentUser)
+  }, [])
 
   //homepage - all books
+
+  const [books, setBooks] = useState([])
   useEffect(() => {
     fetch("http://localhost:9292/books")
       .then((r) => r.json())
@@ -38,10 +46,14 @@ function App() {
     setMyBooks([...myBooks, book])
   }
 
+  function claimBookFromMarketPlace(bookObj) {
+    const updatedArray = availableBooks.map((book) => (book = !bookObj.id))
+    setAvailableBooks(updatedArray)
+  }
   return (
     <div>
-      Hello from app
       <NavBar />
+      <h3>Welcome back, {currentUser.name}!</h3>
       <Routes>
         <Route
           exact
@@ -58,7 +70,13 @@ function App() {
         <Route
           exact
           path="/marketplace"
-          element={<MarketPlace availableBooks={availableBooks} />}
+          element={
+            <MarketPlace
+              claimBookFromMarketPlace={claimBookFromMarketPlace}
+              availableBooks={availableBooks}
+              currentUser={currentUser}
+            />
+          }
         />
         <Route path="/mybooks" element={<MyBooksPage myBooks={myBooks} />} />
       </Routes>

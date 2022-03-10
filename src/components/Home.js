@@ -5,6 +5,7 @@ function Home({ books, orderBook, myBooks, setMyBooks }) {
   const bookCards = books.map((book) => (
     <BookCard
       key={book.id}
+      id={book.id}
       title={book.title}
       description={book.description}
       image={book.image}

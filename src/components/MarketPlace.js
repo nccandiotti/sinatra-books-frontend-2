@@ -1,7 +1,11 @@
 import React from "react"
 import MarketPlaceCards from "./MarketPlaceCards"
 
-function MarketPlace({ availableBooks }) {
+function MarketPlace({
+  currentUser,
+  availableBooks,
+  claimBookFromMarketPlace,
+}) {
   console.log(availableBooks)
   const createMarketPlaceCards = availableBooks.map((book) => (
     <MarketPlaceCards
@@ -9,6 +13,8 @@ function MarketPlace({ availableBooks }) {
       available={book.available}
       book={book}
       description={book.description}
+      claimBookFromMarketPlace={claimBookFromMarketPlace}
+      currentUser={currentUser}
     />
   ))
   return (

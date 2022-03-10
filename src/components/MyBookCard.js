@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 
-function MyBookCard({ book }) {
+function MyBookCard({ user_id, book, id }) {
+  console.log(user_id)
   // OnClick need to patch availability
 
   //   from Controller :
@@ -13,7 +14,7 @@ function MyBookCard({ book }) {
 
   const updateAvailability = () => {
     toggleAvailable()
-    fetch(`http://localhost:9292/mybooks/${book.id}`, {
+    fetch(`http://localhost:9292/mybooks/${user_id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -25,7 +26,7 @@ function MyBookCard({ book }) {
       .then((res) => res.json())
       .then((result) => console.log(result))
   }
-  console.log(book)
+  // console.log(book)
   return (
     <>
       <h4>{book.book.title}</h4>
