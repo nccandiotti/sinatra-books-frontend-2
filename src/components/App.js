@@ -60,9 +60,6 @@ function App() {
     setMyBooks([...myBooks, book])
   }
 
-  // make mybook available to marketplace (in mybookcard component)
-  function addBookToMarketplace(book) {}
-
   // claim book from marketplace
   function deleteBookFromMarketPlace(bookObjId) {
     const updatedArray = availableBooks.filter(
