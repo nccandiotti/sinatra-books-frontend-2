@@ -4,14 +4,14 @@ import MarketPlaceCards from "./MarketPlaceCards"
 function MarketPlace({
   currentUser,
   availableBooks,
-  claimBookFromMarketPlace,
+  deleteBookFromMarketPlace,
 }) {
   console.log(availableBooks)
   const createMarketPlaceCards = availableBooks.map((book) => (
     <MarketPlaceCards
       key={book.id}
       book={book}
-      claimBookFromMarketPlace={claimBookFromMarketPlace}
+      claimBookFromMarketPlace={deleteBookFromMarketPlace}
       currentUser={currentUser}
     />
   ))

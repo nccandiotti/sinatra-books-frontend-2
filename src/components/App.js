@@ -64,8 +64,10 @@ function App() {
   function addBookToMarketplace(book) {}
 
   // claim book from marketplace
-  function claimBookFromMarketPlace(bookObj) {
-    const updatedArray = availableBooks.map((book) => (book = !bookObj.id))
+  function deleteBookFromMarketPlace(bookObjId) {
+    const updatedArray = availableBooks.filter(
+      (book) => book.id !== bookObjId.id
+    )
     setAvailableBooks(updatedArray)
   }
   return (
@@ -94,7 +96,7 @@ function App() {
           path="/marketplace"
           element={
             <MarketPlace
-              claimBookFromMarketPlace={claimBookFromMarketPlace}
+              deleteBookFromMarketPlace={deleteBookFromMarketPlace}
               availableBooks={availableBooks}
               currentUser={currentUser}
             />

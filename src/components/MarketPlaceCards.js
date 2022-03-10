@@ -1,9 +1,9 @@
 import React from "react"
 
-function MarketPlaceCards({ currentUser, claimBookFromMarketPlace, book }) {
+function MarketPlaceCards({ currentUser, deleteBookFromMarketPlace, book }) {
   // patch request -
   function handleClick() {
-    // claimBookFromMarketPlace(book)
+    // deleteBookFromMarketPlace(book.id)
 
     fetch(`http://localhost:9292/availablebooks/${book.id}`, {
       method: "PATCH",
@@ -12,9 +12,8 @@ function MarketPlaceCards({ currentUser, claimBookFromMarketPlace, book }) {
         user_id: currentUser.id,
         availability: false,
       }),
-    })
-      .then((r) => r.json())
-      .then((r) => console.log(r))
+    }).then((r) => r.json())
+    deleteBookFromMarketPlace(book.id)
   }
   return (
     <>
