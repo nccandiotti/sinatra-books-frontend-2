@@ -7,6 +7,7 @@ function Home({
   myBooks,
   setMyBooks,
   handleAvailabilityUpdate,
+  currentUser,
 }) {
   console.log(myBooks)
   const bookCards = books.map((book) => (
@@ -20,9 +21,15 @@ function Home({
       myBooks={myBooks}
       setMyBooks={setMyBooks}
       handleAvailabilityUpdate={handleAvailabilityUpdate}
+      currentUser={currentUser}
     />
   ))
-  return <ul>{bookCards}</ul>
+  return (
+    <>
+      <h1>Shop All Books</h1>
+      <ul>{bookCards}</ul>
+    </>
+  )
 }
 
 export default Home

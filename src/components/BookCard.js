@@ -1,6 +1,6 @@
 import React from "react"
 
-function BookCard({ orderBook, id, title, description, image }) {
+function BookCard({ orderBook, id, title, description, image, currentUser }) {
   // onclick has to update the myBooks array w/orderbooks fx
   // onclick creates a new book instance of user_book for a given user - need
 
@@ -16,7 +16,7 @@ function BookCard({ orderBook, id, title, description, image }) {
   }
 
   return (
-    <li className="cards-list">
+    <li className="cards-list ">
       <h4>{title}</h4>
       <img width="200px" height="200px" src={image} alt={title} />
       <p>{description}</p>

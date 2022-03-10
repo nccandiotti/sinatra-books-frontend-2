@@ -10,9 +10,7 @@ function MarketPlace({
   const createMarketPlaceCards = availableBooks.map((book) => (
     <MarketPlaceCards
       key={book.id}
-      available={book.available}
       book={book}
-      description={book.description}
       claimBookFromMarketPlace={claimBookFromMarketPlace}
       currentUser={currentUser}
     />

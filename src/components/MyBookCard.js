@@ -8,7 +8,7 @@ function MyBookCard({ handleAvailabilityUpdate, user_id, book, id }) {
   // UserBook.find(params[:id]).update(available: true).to_json
   // end
   // const [isAvailable, setIsAvailable] = useState(false)
-  console.log(book.available)
+  // console.log(book.available)
 
   // function toggleAvailable() {
   //   setIsAvailable((prevState) => !prevState)
@@ -39,9 +39,9 @@ function MyBookCard({ handleAvailabilityUpdate, user_id, book, id }) {
       <p>{book.book.description}</p>
       {/* {book.book.availability ? "Available in MarketPlace" : "Not Available"} */}
       {book.available ? (
-        <button onClick={updateAvailability}>Add from MarketPlace</button>
+        <button onClick={updateAvailability}>Add to MarketPlace</button>
       ) : (
-        <button onClick={updateAvailability}>Remove to MarketPlace</button>
+        <button onClick={updateAvailability}>Remove from MarketPlace</button>
       )}
     </>
   )

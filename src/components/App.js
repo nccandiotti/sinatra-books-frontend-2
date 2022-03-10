@@ -32,7 +32,6 @@ function App() {
       .then(setMyBooks)
   }, [])
   const [myBooks, setMyBooks] = useState([])
-  console.log(myBooks)
 
   function handleAvailabilityUpdate(bookId) {
     const array = myBooks.map((book) => {
@@ -70,7 +69,9 @@ function App() {
   return (
     <div>
       <NavBar />
-      <h3>Welcome back, {currentUser.name}!</h3>
+      <h3>
+        <em>Welcome back, {currentUser.name}!</em>
+      </h3>
       <Routes>
         <Route
           exact
@@ -82,6 +83,7 @@ function App() {
               orderBook={orderBook}
               myBooks={myBooks}
               setMyBooks={setMyBooks}
+              currentUser={currentUser}
             />
           }
         />
