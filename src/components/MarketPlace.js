@@ -11,7 +11,7 @@ function MarketPlace({
     <MarketPlaceCards
       key={book.id}
       book={book}
-      claimBookFromMarketPlace={deleteBookFromMarketPlace}
+      deleteBookFromMarketPlace={deleteBookFromMarketPlace}
       currentUser={currentUser}
     />
   ))

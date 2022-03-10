@@ -1,7 +1,7 @@
 import React from "react"
 
-function MarketPlaceCards({ currentUser, book }) {
-  // patch request -
+function MarketPlaceCards({ deleteBookFromMarketPlace, currentUser, book }) {
+  
   function handleClick() {
     fetch(`http://localhost:9292/availablebooks/${book.id}`, {
       method: "PATCH",
@@ -10,7 +10,9 @@ function MarketPlaceCards({ currentUser, book }) {
         user_id: currentUser.id,
         availability: false,
       }),
-    }).then((r) => r.json())
+    })
+    .then((r) => r.json())
+    .then(()=>deleteBookFromMarketPlace(book.id))
   }
   return (
     <>

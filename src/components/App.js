@@ -15,10 +15,7 @@ function App() {
       .then(setCurrentUser)
   }, [])
 
-  console.log(currentUser)
-
   //homepage - all books
-
   const [books, setBooks] = useState([])
   useEffect(() => {
     fetch("http://localhost:9292/books")
@@ -63,8 +60,8 @@ function App() {
   // claim book from marketplace
   function deleteBookFromMarketPlace(bookObjId) {
     const updatedArray = availableBooks.filter(
-      (book) => book.id !== bookObjId.id
-    )
+      (book) => book.id !== bookObjId
+      )
     setAvailableBooks(updatedArray)
   }
   return (

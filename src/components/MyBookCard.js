@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import React from "react"
 
 function MyBookCard({ handleAvailabilityUpdate, user_id, book, id }) {
   // OnClick need to patch availability
@@ -26,7 +26,7 @@ function MyBookCard({ handleAvailabilityUpdate, user_id, book, id }) {
       }),
     }).then((res) => res.json())
   }
-  // console.log(book)
+  
   return (
     <>
       <h4>{book.book.title}</h4>
