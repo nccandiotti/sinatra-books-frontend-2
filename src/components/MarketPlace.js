@@ -2,6 +2,7 @@ import React from "react"
 import MarketPlaceCards from "./MarketPlaceCards"
 
 function MarketPlace({
+  handleAvailabilityUpdate,
   currentUser,
   availableBooks,
   deleteBookFromMarketPlace,
@@ -13,6 +14,7 @@ function MarketPlace({
       book={book}
       deleteBookFromMarketPlace={deleteBookFromMarketPlace}
       currentUser={currentUser}
+      handleAvailabilityUpdate={handleAvailabilityUpdate}
     />
   ))
   return (

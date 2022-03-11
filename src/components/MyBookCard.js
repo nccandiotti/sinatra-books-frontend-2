@@ -1,19 +1,6 @@
 import React from "react"
 
-function MyBookCard({ handleAvailabilityUpdate, user_id, book, id }) {
-  // OnClick need to patch availability
-
-  //   from Controller :
-  // patch '/users/:id/sell_book' do
-  // UserBook.find(params[:id]).update(available: true).to_json
-  // end
-  // const [isAvailable, setIsAvailable] = useState(false)
-  // console.log(book.available)
-
-  // function toggleAvailable() {
-  //   setIsAvailable((prevState) => !prevState)
-  // }
-
+function MyBookCard({ handleAvailabilityUpdate, user_id, book }) {
   const updateAvailability = () => {
     handleAvailabilityUpdate(book.book.id)
     fetch(`http://localhost:9292/mybooks/${user_id}`, {
@@ -37,7 +24,6 @@ function MyBookCard({ handleAvailabilityUpdate, user_id, book, id }) {
         alt={book.book.title}
       />
       <p>{book.book.description}</p>
-      {/* {book.book.availability ? "Available in MarketPlace" : "Not Available"} */}
       {book.available ? (
         <button className="not available" onClick={updateAvailability}>
           Add to MarketPlace

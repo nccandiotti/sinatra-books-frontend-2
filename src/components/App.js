@@ -88,6 +88,7 @@ function App() {
           path="/marketplace"
           element={
             <MarketPlace
+              handleAvailabilityUpdate={handleAvailabilityUpdate}
               deleteBookFromMarketPlace={deleteBookFromMarketPlace}
               availableBooks={availableBooks}
               currentUser={currentUser}

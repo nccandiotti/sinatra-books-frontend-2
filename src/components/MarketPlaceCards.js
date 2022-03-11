@@ -1,18 +1,24 @@
 import React from "react"
 
-function MarketPlaceCards({ deleteBookFromMarketPlace, currentUser, book }) {
-  
+function MarketPlaceCards({
+  handleAvailabilityUpdate,
+  deleteBookFromMarketPlace,
+  currentUser,
+  book,
+}) {
   function handleClick() {
+    deleteBookFromMarketPlace(book.id)
+    handleAvailabilityUpdate(book.id)
     fetch(`http://localhost:9292/availablebooks/${book.id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         user_id: currentUser.id,
-        availability: false,
+        available: !book.available,
       }),
     })
-    .then((r) => r.json())
-    .then(()=>deleteBookFromMarketPlace(book.id))
+      .then((r) => r.json())
+      .then((r) => console.log(r))
   }
   return (
     <>

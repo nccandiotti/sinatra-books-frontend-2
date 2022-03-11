@@ -1,13 +1,7 @@
 import { useEffect, useState } from "react"
 import MyBooksContainer from "./MyBooksContainer"
 
-// need to figure out how to interpolate id based on current user
-// const id =
-
 function MyBooksPage({ myBooks, handleAvailabilityUpdate }) {
-  // my books => available, rating, user_id, book (nested title, desc, etc.)
-  // console.log(myBooks)
-
   return (
     <div>
       <MyBooksContainer
