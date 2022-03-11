@@ -1,10 +1,15 @@
 import { useEffect, useState } from "react"
 import MyBooksContainer from "./MyBooksContainer"
 
-function MyBooksPage({ myBooks, handleAvailabilityUpdate }) {
+function MyBooksPage({
+  updateMarketPlaceArray,
+  myBooks,
+  handleAvailabilityUpdate,
+}) {
   return (
     <div>
       <MyBooksContainer
+        updateMarketPlaceArray={updateMarketPlaceArray}
         myBooks={myBooks}
         handleAvailabilityUpdate={handleAvailabilityUpdate}
       />

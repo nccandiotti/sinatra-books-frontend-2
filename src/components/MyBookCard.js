@@ -1,8 +1,14 @@
 import React from "react"
 
-function MyBookCard({ handleAvailabilityUpdate, user_id, book }) {
+function MyBookCard({
+  updateMarketPlaceArray,
+  handleAvailabilityUpdate,
+  user_id,
+  book,
+}) {
   const updateAvailability = () => {
     handleAvailabilityUpdate(book.book.id)
+    updateMarketPlaceArray(book.book.id)
     fetch(`http://localhost:9292/mybooks/${user_id}`, {
       method: "PATCH",
       headers: {
@@ -26,11 +32,11 @@ function MyBookCard({ handleAvailabilityUpdate, user_id, book }) {
       <p>{book.book.description}</p>
       {book.available ? (
         <button className="not available" onClick={updateAvailability}>
-          Add to MarketPlace
+          Remove from MarketPlace
         </button>
       ) : (
         <button className="available" onClick={updateAvailability}>
-          Remove from MarketPlace
+          Add to MarketPlace
         </button>
       )}
     </>

@@ -43,6 +43,11 @@ function App() {
     setMyBooks(array)
   }
 
+  function updateMarketPlaceArray(bookObjId) {
+    const updatedArray = myBooks.filter((book) => book.available !== bookObjId)
+    setAvailableBooks(updatedArray)
+  }
+
   //all available books - market place
   const [availableBooks, setAvailableBooks] = useState([])
   useEffect(() => {
@@ -99,6 +104,7 @@ function App() {
           path="/mybooks"
           element={
             <MyBooksPage
+              updateMarketPlaceArray={updateMarketPlaceArray}
               myBooks={myBooks}
               handleAvailabilityUpdate={handleAvailabilityUpdate}
             />
