@@ -17,7 +17,7 @@ function MarketPlace({
   ))
   return (
     <>
-      <h1>Market Place</h1>
+      <h1>Shop Marketplace</h1>
       {createMarketPlaceCards}
     </>
   )

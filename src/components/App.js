@@ -59,14 +59,12 @@ function App() {
 
   // claim book from marketplace
   function deleteBookFromMarketPlace(bookObjId) {
-    const updatedArray = availableBooks.filter(
-      (book) => book.id !== bookObjId
-      )
+    const updatedArray = availableBooks.filter((book) => book.id !== bookObjId)
     setAvailableBooks(updatedArray)
   }
   return (
     <div>
-       <h5>
+      <h5 style={{ fontSize: "12px" }}>
         <em>Welcome back, {currentUser.name}!</em>
       </h5>
       <NavBar />

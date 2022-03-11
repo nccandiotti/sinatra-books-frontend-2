@@ -25,16 +25,17 @@ function Home({
         handleAvailabilityUpdate={handleAvailabilityUpdate}
         currentUser={currentUser}
         onAddClick={handleAddBooks}
+        books={books}
       />
     ))
 
-    function handleAddBooks(){
-      setIndex(index => (index + 1) % books.length)
-    }
-  
+  function handleAddBooks() {
+    setIndex((index) => (index + 1) % books.length)
+  }
+
   return (
     <>
-      <h2>Shop All Books</h2>
+      <h2>Click Below to Shop Our Books</h2>
       <ul>{bookCards}</ul>
     </>
   )

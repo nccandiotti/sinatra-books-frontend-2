@@ -5,7 +5,7 @@
   text-align: center;
   line-height: 40px;
   margin-top: 10px;
-  color:rgb(245, 245, 245);
+  color: rgb(245, 245, 245);
 }
 body {
   /* background-color: rgb(241, 225, 228); */
@@ -61,7 +61,6 @@ h5 {
   margin: -10px;
   margin-left: 80%;
   font-size: 9px;
-  
 }
 
 img {
@@ -69,6 +68,8 @@ img {
   padding: 20px 20px;
   box-shadow: 0px 10px 15px black;
   padding: 5px 5px;
+  width: 300px;
+  height: 400px;
 }
 
 p {
@@ -87,8 +88,9 @@ p {
 
 button {
   opacity: 80%;
-  margin: 20px 20px;
-  padding: 10px 10px;
+  width: 20%;
+  margin: 10px 40px;
+  padding: 10px 20px;
   background-color: #2e4bf0;
   border: none;
   border-radius: 10px;

@@ -9,7 +9,7 @@ function NavBar() {
         Home
       </NavLink>
       <NavLink className="nav-li" to="/marketplace">
-        | Shop Marketplace |
+        | Marketplace |
       </NavLink>
       <NavLink className="nav-li" to="/mybooks">
         My books
