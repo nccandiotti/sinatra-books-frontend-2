@@ -26,7 +26,7 @@ function MyBookCard({ handleAvailabilityUpdate, user_id, book, id }) {
       }),
     }).then((res) => res.json())
   }
-  
+
   return (
     <>
       <h4>{book.book.title}</h4>
@@ -39,9 +39,13 @@ function MyBookCard({ handleAvailabilityUpdate, user_id, book, id }) {
       <p>{book.book.description}</p>
       {/* {book.book.availability ? "Available in MarketPlace" : "Not Available"} */}
       {book.available ? (
-        <button onClick={updateAvailability}>Add to MarketPlace</button>
+        <button className="not available" onClick={updateAvailability}>
+          Add to MarketPlace
+        </button>
       ) : (
-        <button onClick={updateAvailability}>Remove from MarketPlace</button>
+        <button className="available" onClick={updateAvailability}>
+          Remove from MarketPlace
+        </button>
       )}
     </>
   )

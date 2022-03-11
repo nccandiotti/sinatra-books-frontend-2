@@ -12,7 +12,7 @@ function NavBar() {
         | Marketplace |
       </NavLink>
       <NavLink className="nav-li" to="/mybooks">
-        My books
+        My Books
       </NavLink>
     </header>
   )

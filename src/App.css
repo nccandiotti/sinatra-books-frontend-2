@@ -87,18 +87,19 @@ p {
 } */
 
 button {
-  opacity: 80%;
   width: 20%;
   margin: 10px 40px;
   padding: 10px 20px;
-  background-color: #2e4bf0;
+  background-color: hsl(231, 87%, 56%, 0.6);
   border: none;
   border-radius: 10px;
   color: white;
+  font-style: bold;
+  font-size: 15px;
 }
 
 button:hover {
-  opacity: 100%;
+  background-color: hsl(231, 87%, 56%);
   transition: 0.3s opacity ease;
 }
 
@@ -127,3 +128,11 @@ button:hover {
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 }
+
+/* .available:hover {
+  background: hsl(120, 100%, 25%, 0.8);
+}
+
+.unavailable:hover {
+  background: rgb(255, 0, 0, 0.8);
+} */
