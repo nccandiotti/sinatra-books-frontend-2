@@ -12,8 +12,8 @@ function BookCard({
 }) {
   // onclick has to update the myBooks array w/orderbooks fx
   // onclick creates a new book instance of user_book for a given user - need
-
   function handleClick() {
+    orderBook({ book: { id: id, title: title, image: image } })
     fetch("http://localhost:9292/mybooks", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
