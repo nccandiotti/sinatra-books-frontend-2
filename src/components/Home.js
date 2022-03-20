@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import BookCard from "./BookCard"
-import { motion } from "framer-motion"
 import Carousel from "react-material-ui-carousel"
 
 function Home({
@@ -14,11 +13,17 @@ function Home({
   return (
     <>
       <h2 style={{ fontSize: "15px" }}>
-        <em>Click Below to Shop Our Books</em>
+        <em>
+          BookPlace, your one stop shop to buy, trade, and organize your books
+        </em>
       </h2>
 
       <Carousel
-        style={{ width: "80%" }}
+        style={{ backgroundImage: "url(./image/bookstore)" }}
+        interval="3000"
+        animation="fade"
+        duration="2000ms"
+        // style={{ width: "80%" }}
         fullHeightHover={true}
         navButtonsProps={{
           style: {
@@ -33,8 +38,8 @@ function Home({
             top: "unset",
           },
         }}
-        NextIcon="next" // Change the "inside" of the next button to "next"
-        PrevIcon="prev" // Change the "inside of the prev button to "prev"
+        // NextIcon="next" // Change the "inside" of the next button to "next"
+        // PrevIcon="prev" // Change the "inside of the prev button to "prev"
       >
         {books.map((book) => (
           <BookCard

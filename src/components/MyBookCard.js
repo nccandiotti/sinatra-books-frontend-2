@@ -1,4 +1,8 @@
-import React from "react"
+import { useState } from "react"
+import Button from "@mui/material/Button"
+import Grid from "@mui/material/Grid"
+import RemoveShoppingCartIcon from "@mui/icons-material/RemoveShoppingCart"
+import LoyaltyIcon from "@mui/icons-material/Loyalty"
 
 function MyBookCard({
   updateMarketPlaceArray,
@@ -6,6 +10,9 @@ function MyBookCard({
   user_id,
   book,
 }) {
+  const [showDescription, setShowDescription] = useState(true)
+  const toggleCover = () => setShowDescription((prevState) => !prevState)
+
   const updateAvailability = () => {
     handleAvailabilityUpdate(book.book.id)
     updateMarketPlaceArray(book.book.id)
@@ -21,20 +28,38 @@ function MyBookCard({
   }
 
   return (
-    <>
-      <h4>{book.book.title}</h4>
-      <img src={book.book.image} alt={book.book.title} />
-      <p>{book.book.description}</p>
-      {book.available ? (
-        <button className="button" onClick={updateAvailability}>
-          Remove from MarketPlace
-        </button>
+    <Grid item xs={3}>
+      {showDescription ? (
+        <img
+          className="book-description"
+          src={book.book.image}
+          alt={book.book.title}
+        />
       ) : (
-        <button className="button" onClick={updateAvailability}>
-          Add to MarketPlace
-        </button>
+        <div className="book-description">
+          <p>{book.book.description}</p>
+        </div>
       )}
-    </>
+      {book.available ? (
+        <Button
+          startIcon={<RemoveShoppingCartIcon color="error" sx="large" />}
+          className="button"
+          onClick={updateAvailability}
+          style={{ color: "white" }}
+        >
+          Remove from MarketPlace
+        </Button>
+      ) : (
+        <Button
+          startIcon={<LoyaltyIcon hover="none" color="success" sx="large" />}
+          className="button"
+          onClick={updateAvailability}
+          style={{ color: "white" }}
+        >
+          Add to MarketPlace
+        </Button>
+      )}
+    </Grid>
   )
 }
 

@@ -1,6 +1,7 @@
 // import { useState } from "react"
 import Card from "@mui/material/Paper"
 import "../App.css"
+import Button from "@mui/material/Button"
 
 function BookCard({ orderBook, id, title, description, image, currentUser }) {
   function handleClick() {
@@ -13,12 +14,14 @@ function BookCard({ orderBook, id, title, description, image, currentUser }) {
   }
 
   return (
-    <Card className="MuiCard" variant="outlined">
+    <Card
+      style={{ backgroundImage: "url(./image/bookstore)" }}
+      variant="outlined"
+    >
       <img src={image} alt={title} />
-
-      <button className="button" onClick={handleClick}>
+      <Button className="button" onClick={handleClick}>
         Order
-      </button>
+      </Button>
     </Card>
   )
 }

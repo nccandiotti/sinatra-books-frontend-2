@@ -1,5 +1,6 @@
 import React from "react"
 import MyBookCard from "./MyBookCard"
+import Grid from "@mui/material/Grid"
 
 function MyBooksContainer({
   updateMarketPlaceArray,
@@ -15,7 +16,11 @@ function MyBooksContainer({
       handleAvailabilityUpdate={handleAvailabilityUpdate}
     />
   ))
-  return <div>{createMyBooksCards}</div>
+  return (
+    <Grid container spacing={5}>
+      {createMyBooksCards}
+    </Grid>
+  )
 }
 
 export default MyBooksContainer
